@@ -86,13 +86,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const handleOptionClick = (chosenOption) => {
         userChoice = chosenOption;
         ELEMENTS.USER_PICK.classList.add(`${userChoice}`);
-        ELEMENTS.USER_CHOICE_IMAGE.src = `module-1/${userChoice}.jpg`;
+        ELEMENTS.USER_CHOICE_IMAGE.src = `${userChoice}.jpg`;
 
         ELEMENTS.GAME_SCREEN.style.display = "none";
         ELEMENTS.RESULT_SCREEN.style.display = "block";
 
         computerChoice = generateComputerChoice();
-        ELEMENTS.COMPUTER_CHOICE_IMAGE.src = `module-1/${computerChoice}.jpg`;
+        ELEMENTS.COMPUTER_CHOICE_IMAGE.src = `${computerChoice}.jpg`;
         ELEMENTS.COMPUTER_PICK.classList.add(`${computerChoice}`);
 
         if (
