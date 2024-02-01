@@ -96,9 +96,9 @@ document.addEventListener("DOMContentLoaded", function () {
         ELEMENTS.COMPUTER_PICK.classList.add(`${computerChoice}`);
 
         if (
-            (userChoice === "rock" && computerChoice === "scissor") ||
+            (userChoice === "rock" && computerChoice === "scissors") ||
             (userChoice === "paper" && computerChoice === "rock") ||
-            (userChoice === "scissor" && computerChoice === "paper")
+            (userChoice === "scissors" && computerChoice === "paper")
         ) {
             userWins();
         } else if (userChoice === computerChoice) {
