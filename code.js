@@ -96,9 +96,9 @@ document.addEventListener("DOMContentLoaded", function () {
         ELEMENTS.COMPUTER_PICK.classList.add(`${computerChoice}`);
 
         if (
-            (userChoice === "rock" && computerChoice === "scissors") ||
+            (userChoice === "rock" && computerChoice === "scissor") ||
             (userChoice === "paper" && computerChoice === "rock") ||
-            (userChoice === "scissors" && computerChoice === "paper")
+            (userChoice === "scissor" && computerChoice === "paper")
         ) {
             userWins();
         } else if (userChoice === computerChoice) {
@@ -126,5 +126,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
     ELEMENTS.ROCK.addEventListener("click", () => handleOptionClick("rock"));
     ELEMENTS.PAPER.addEventListener("click", () => handleOptionClick("paper"));
-    ELEMENTS.SCISSORS.addEventListener("click", () => handleOptionClick("scissors"));
+    ELEMENTS.SCISSORS.addEventListener("click", () => handleOptionClick("scissor"));
 });
