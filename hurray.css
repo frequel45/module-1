@@ -1,0 +1,224 @@
+body {
+    margin: 0;
+    background-color: rgb(118, 196, 0);
+    font-size: 16px;
+    font-family: Roboto, sans-serif;
+    box-sizing: border-box;
+  }
+  h1,
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .container {
+    max-width: 840px;
+    margin: 0 auto;
+  }
+  .celebration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+    /* border: 1px solid black; */
+  }
+  .image_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 3.5rem;
+  }
+  .image_wrapper img:last-child {
+    position: absolute;
+    top: 50%;
+    width: 200px;
+    height: 200px;
+  }
+  .image_wrapper img:first-child {
+    width: 620px;
+    height: 310px;
+  }
+  .text_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .celebration h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 91px;
+    font-weight: 600;
+    letter-spacing: 9.1px;
+    text-transform: uppercase;
+  }
+  .celebration p {
+    color: #fff;
+    text-align: center;
+    font-size: 41px;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+  }
+  .play_again {
+    background-color: #fff;
+    color: #6b6b6b;
+    padding-inline: 2rem;
+    padding-block: 0.8rem;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    border-radius: 10px;
+  }
+  
+  .rulesdiv {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 1rem;
+  }
+  .rule_btn {
+    padding-inline: 2rem;
+    padding-block: 0.6rem;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+  
+  .rule_wrapper {
+    position: absolute;
+    right: 0;
+    bottom: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 2rem;
+    padding-bottom: 0;
+  }
+  .rule_box {
+    display: block;
+    position: relative;
+    width: 278px;
+    background-color: rgb(5, 57, 5);
+    color: white;
+    border: 8px solid white;
+    border-radius: 13px;
+  }
+  .rule_box_header {
+    text-align: center;
+    padding-inline: 1rem;
+    padding-top: 1rem;
+    font-size: 1.829rem;
+    font-weight: 700;
+  }
+  .close_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    border: 6px solid white;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    position: absolute;
+    right: -2rem;
+    top: -2.25rem;
+  }
+  .rule_content {
+    padding-right: 1rem;
+    padding-bottom: 2rem;
+    font-size: 0.8125rem;
+  }
+  ul {
+    list-style-type: square;
+  }
+  li::marker {
+    color: #ffa943;
+    font-size: 1.5rem;
+  }
+  
+  @media screen and (max-width: 835px) {
+    .container {
+      max-width: 100%;
+      padding: 1rem;
+    }
+  
+    .image_wrapper img:first-child {
+      width: 100%;
+      height: 100%;
+    }
+    .image_wrapper img:last-child {
+      width: 100px;
+      height: 100px;
+    }
+    .text_wrapper {
+      width: 100%;
+    }
+    .celebration h1 {
+      font-size: 50px;
+      letter-spacing: 5px;
+    }
+    .celebration p {
+      font-size: 30px;
+      letter-spacing: 1px;
+    }
+    .play_again {
+      padding-inline: 1rem;
+      padding-block: 0.5rem;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    .rulesdiv {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding: 0.8rem;
+    }
+    .rule_btn {
+      padding-inline: 1rem;
+      padding-block: 0.5rem;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    .rule_wrapper {
+      bottom: 50px;
+      padding: 1rem;
+      padding-bottom: 0;
+    }
+    .rule_box {
+      width: 100%;
+      border: 5px solid white;
+      border-radius: 10px;
+    }
+    .rule_box_header {
+      font-size: 1.2rem;
+    }
+    .close_btn {
+      width: 40px;
+      height: 40px;
+      right: -1rem;
+      top: -1.5rem;
+    }
+    .rule_content {
+      padding-right: 0.5rem;
+      padding-bottom: 1rem;
+      font-size: 0.7rem;
+    }
+    li::marker {
+      font-size: 1rem;
+    }
+  }
+  
