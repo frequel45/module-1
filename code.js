@@ -1,26 +1,26 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const elements = {
-        rock: document.querySelector("#rock"),
-        paper: document.querySelector("#paper"),
-        scissors: document.querySelector("#scissors"),
-        userScoreValue: document.querySelector("#userScore"),
-        computerScoreValue: document.querySelector("#computerScore"),
-        gameScreen: document.querySelector(".game_screen"),
-        resultScreen: document.querySelector(".result_screen"),
-        ruleButton: document.querySelector(".rule_btn"),
-        ruleWrapper: document.querySelector(".rule_wrapper"),
-        ruleBoxCloseButton: document.querySelector(".close_btn"),
-        playAgain: document.querySelector("#play"),
-        mobilePlayButton: document.querySelector("#mobile_play"),
-        nextButton: document.querySelector("#next_btn"),
-        userPick: document.querySelector("#user"),
-        computerPick: document.querySelector("#computer"),
-        resultText: document.querySelector("#winner"),
-        mobileResultText: document.querySelector("#mobile_winner"),
-        userChoiceImage: document.querySelector("#userPickImage"),
-        computerChoiceImage: document.querySelector("#computerChoiceImage"),
-        userwiningIndicator: document.querySelector("#userwiningIndicator"),
-        computerwiningIndicator: document.querySelector("#computerwiningIndicator"),
+    const ELEMENTS = {
+        ROCK: document.querySelector("#rock"),
+        PAPER: document.querySelector("#paper"),
+        SCISSORS: document.querySelector("#scissors"),
+        USER_SCORE_VALUE: document.querySelector("#userScore"),
+        COMPUTER_SCORE_VALUE: document.querySelector("#computerScore"),
+        GAME_SCREEN: document.querySelector(".game_screen"),
+        RESULT_SCREEN: document.querySelector(".result_screen"),
+        RULE_BUTTON: document.querySelector(".rule_btn"),
+        RULE_WRAPPER: document.querySelector(".rule_wrapper"),
+        RULE_BOX_CLOSE_BUTTON: document.querySelector(".close_btn"),
+        PLAY_AGAIN: document.querySelector("#play"),
+        MOBILE_PLAY_BUTTON: document.querySelector("#mobile_play"),
+        NEXT_BUTTON: document.querySelector("#next_btn"),
+        USER_PICK: document.querySelector("#user"),
+        COMPUTER_PICK: document.querySelector("#computer"),
+        RESULT_TEXT: document.querySelector("#winner"),
+        MOBILE_RESULT_TEXT: document.querySelector("#mobile_winner"),
+        USER_CHOICE_IMAGE: document.querySelector("#userPickImage"),
+        COMPUTER_CHOICE_IMAGE: document.querySelector("#computerChoiceImage"),
+        USER_WINNING_INDICATOR: document.querySelector("#userwiningIndicator"),
+        COMPUTER_WINNING_INDICATOR: document.querySelector("#computerwiningIndicator"),
     };
 
     let userChoice;
@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let userScore = localStorage.getItem("userScore") || 0;
     let computerScore = localStorage.getItem("computerScore") || 0;
 
-    elements.userScoreValue.textContent = userScore;
-    elements.computerScoreValue.textContent = computerScore;
+    ELEMENTS.USER_SCORE_VALUE.textContent = userScore;
+    ELEMENTS.COMPUTER_SCORE_VALUE.textContent = computerScore;
 
     const generateComputerChoice = () => {
         const choices = ["rock", "paper", "scissors"];
@@ -39,61 +39,61 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     const reset = () => {
-        elements.resultScreen.style.display = "none";
-        elements.gameScreen.style.display = "block";
+        ELEMENTS.RESULT_SCREEN.style.display = "none";
+        ELEMENTS.GAME_SCREEN.style.display = "block";
 
-        elements.userPick.classList.remove(`${userChoice}`);
-        elements.userChoiceImage.src = "";
+        ELEMENTS.USER_PICK.classList.remove(`${userChoice}`);
+        ELEMENTS.USER_CHOICE_IMAGE.src = "";
 
-        elements.computerChoiceImage.src = "";
-        elements.computerPick.classList.remove(`${computerChoice}`);
+        ELEMENTS.COMPUTER_CHOICE_IMAGE.src = "";
+        ELEMENTS.COMPUTER_PICK.classList.remove(`${computerChoice}`);
 
-        elements.playAgain.textContent = "PLAY AGAIN";
+        ELEMENTS.PLAY_AGAIN.textContent = "PLAY AGAIN";
         userChoice = "";
         computerChoice = "";
 
-        elements.userwiningIndicator.style.display = "none";
-        elements.computerwiningIndicator.style.display = "none";
+        ELEMENTS.USER_WINNING_INDICATOR.style.display = "none";
+        ELEMENTS.COMPUTER_WINNING_INDICATOR.style.display = "none";
     };
 
     const userWins = () => {
         userScore++;
         localStorage.setItem("userScore", `${userScore}`);
-        elements.userScoreValue.textContent = userScore;
-        elements.nextButton.style.display = "flex";
-        elements.resultText.textContent = "YOU WIN";
-        elements.mobileResultText.textContent = "YOU WIN";
-        elements.userwiningIndicator.style.display = "flex";
+        ELEMENTS.USER_SCORE_VALUE.textContent = userScore;
+        ELEMENTS.NEXT_BUTTON.style.display = "flex";
+        ELEMENTS.RESULT_TEXT.textContent = "YOU WIN";
+        ELEMENTS.MOBILE_RESULT_TEXT.textContent = "YOU WIN";
+        ELEMENTS.USER_WINNING_INDICATOR.style.display = "flex";
     };
 
     const tieUp = () => {
-        elements.resultText.textContent = "TIE UP";
-        elements.mobileResultText.textContent = "TIE UP";
-        elements.playAgain.textContent = "REPLAY";
-        elements.mobilePlayButton.textContent = "REPLAY";
+        ELEMENTS.RESULT_TEXT.textContent = "TIE UP";
+        ELEMENTS.MOBILE_RESULT_TEXT.textContent = "TIE UP";
+        ELEMENTS.PLAY_AGAIN.textContent = "REPLAY";
+        ELEMENTS.MOBILE_PLAY_BUTTON.textContent = "REPLAY";
     };
 
     const computerWins = () => {
         computerScore++;
         localStorage.setItem("computerScore", `${computerScore}`);
-        elements.computerScoreValue.textContent = computerScore;
-        elements.nextButton.style.display = "none";
-        elements.resultText.textContent = "YOU LOST";
-        elements.mobileResultText.textContent = "YOU LOST";
-        elements.computerwiningIndicator.style.display = "flex";
+        ELEMENTS.COMPUTER_SCORE_VALUE.textContent = computerScore;
+        ELEMENTS.NEXT_BUTTON.style.display = "none";
+        ELEMENTS.RESULT_TEXT.textContent = "YOU LOST";
+        ELEMENTS.MOBILE_RESULT_TEXT.textContent = "YOU LOST";
+        ELEMENTS.COMPUTER_WINNING_INDICATOR.style.display = "flex";
     };
 
     const handleOptionClick = (chosenOption) => {
         userChoice = chosenOption;
-        elements.userPick.classList.add(`${userChoice}`);
-        elements.userChoiceImage.src = `module-1/${userChoice}.jpg`;
+        ELEMENTS.USER_PICK.classList.add(`${userChoice}`);
+        ELEMENTS.USER_CHOICE_IMAGE.src = `module-1/${userChoice}.jpg`;
 
-        elements.gameScreen.style.display = "none";
-        elements.resultScreen.style.display = "block";
+        ELEMENTS.GAME_SCREEN.style.display = "none";
+        ELEMENTS.RESULT_SCREEN.style.display = "block";
 
         computerChoice = generateComputerChoice();
-        elements.computerChoiceImage.src = `module-1/${computerChoice}.jpg`;
-        elements.computerPick.classList.add(`${computerChoice}`);
+        ELEMENTS.COMPUTER_CHOICE_IMAGE.src = `module-1/${computerChoice}.jpg`;
+        ELEMENTS.COMPUTER_PICK.classList.add(`${computerChoice}`);
 
         if (
             (userChoice === "rock" && computerChoice === "scissors") ||
@@ -108,31 +108,23 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
-    window.onload = function () {
-        reset();
-    };
+    reset(); // Call reset initially
 
-    elements.playAgain.addEventListener("click", () => {
-        reset();
-    });
-
-    elements.mobilePlayButton.addEventListener("click", () => {
-        reset();
-    });
+    ELEMENTS.PLAY_AGAIN.addEventListener("click", reset);
+    ELEMENTS.MOBILE_PLAY_BUTTON.addEventListener("click", reset);
 
     let isRuleBoxOpen = true;
-    elements.ruleButton.addEventListener("click", () => {
-        if (!isRuleBoxOpen) {
-            elements.ruleWrapper.style.display = "flex";
-        }
+    ELEMENTS.RULE_BUTTON.addEventListener("click", () => {
+        isRuleBoxOpen = !isRuleBoxOpen;
+        ELEMENTS.RULE_WRAPPER.style.display = isRuleBoxOpen ? "flex" : "none";
     });
 
-    elements.ruleBoxCloseButton.addEventListener("click", () => {
-        elements.ruleWrapper.style.display = "none";
+    ELEMENTS.RULE_BOX_CLOSE_BUTTON.addEventListener("click", () => {
+        ELEMENTS.RULE_WRAPPER.style.display = "none";
         isRuleBoxOpen = false;
     });
 
-    elements.rock.addEventListener("click", () => handleOptionClick("rock"));
-    elements.paper.addEventListener("click", () => handleOptionClick("paper"));
-    elements.scissors.addEventListener("click", () => handleOptionClick("scissors"));
+    ELEMENTS.ROCK.addEventListener("click", () => handleOptionClick("rock"));
+    ELEMENTS.PAPER.addEventListener("click", () => handleOptionClick("paper"));
+    ELEMENTS.SCISSORS.addEventListener("click", () => handleOptionClick("scissors"));
 });
